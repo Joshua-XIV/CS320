@@ -79,6 +79,44 @@ public class ContactTest {
         );
     }
 
+    @Test
+    void testSetFirstNameNull() {
+        Contact contact = new Contact(
+                "Joshua123",
+                "Joshua",
+                "Hernandez",
+                "1234567890",
+                "123 Random Road");
+        assertThrows(IllegalArgumentException.class, () ->
+                contact.setFirstName(null)
+        );
+    }
+
+    @Test
+    void testSetFirstNameTooLong() {
+        Contact contact = new Contact(
+                "Joshua123",
+                "Joshua",
+                "Hernandez",
+                "1234567890",
+                "123 Random Road");
+        assertThrows(IllegalArgumentException.class, () ->
+                contact.setFirstName("Joshuaaaaaaaaaaaaa")
+        );
+    }
+
+    @Test
+    void testSetFirstNameSuccess() {
+        Contact contact = new Contact(
+                "Joshua123",
+                "Joshua",
+                "Hernandez",
+                "1234567890",
+                "123 Random Road");
+        contact.setFirstName("Jane");
+        assertEquals("Jane", contact.getFirstName());
+    }
+
     // -------------------------------------------------------
     // Last name tests
     // -------------------------------------------------------
@@ -105,6 +143,44 @@ public class ContactTest {
                         "1234567890",
                         "123 Random Road")
         );
+    }
+
+    @Test
+    void testSetLastNameNull() {
+        Contact contact = new Contact(
+                "Joshua123",
+                "Joshua",
+                "Hernandez",
+                "1234567890",
+                "123 Random Road");
+        assertThrows(IllegalArgumentException.class, () ->
+                contact.setLastName(null)
+        );
+    }
+
+    @Test
+    void testSetLastNameTooLong() {
+        Contact contact = new Contact(
+                "Joshua123",
+                "Joshua",
+                "Hernandez",
+                "1234567890",
+                "123 Random Road");
+        assertThrows(IllegalArgumentException.class, () ->
+                contact.setLastName("Hernandezzzzzzzz")
+        );
+    }
+
+    @Test
+    void testSetLastNameSuccess() {
+        Contact contact = new Contact(
+                "Joshua123",
+                "Joshua",
+                "Hernandez",
+                "1234567890",
+                "123 Random Road");
+        contact.setLastName("Smith");
+        assertEquals("Smith", contact.getLastName());
     }
 
     // -------------------------------------------------------
@@ -159,6 +235,57 @@ public class ContactTest {
         );
     }
 
+    @Test
+    void testSetPhoneNull() {
+        Contact contact = new Contact(
+                "Joshua123",
+                "Joshua",
+                "Hernandez",
+                "1234567890",
+                "123 Random Road");
+        assertThrows(IllegalArgumentException.class, () ->
+                contact.setPhone(null)
+        );
+    }
+
+    @Test
+    void testSetPhoneTooShort() {
+        Contact contact = new Contact(
+                "Joshua123",
+                "Joshua",
+                "Hernandez",
+                "1234567890",
+                "123 Random Road");
+        assertThrows(IllegalArgumentException.class, () ->
+                contact.setPhone("12345")
+        );
+    }
+
+    @Test
+    void testSetPhoneLetters() {
+        Contact contact = new Contact(
+                "Joshua123",
+                "Joshua",
+                "Hernandez",
+                "1234567890",
+                "123 Random Road");
+        assertThrows(IllegalArgumentException.class, () ->
+                contact.setPhone("12345ABCDE")
+        );
+    }
+
+    @Test
+    void testSetPhoneSuccess() {
+        Contact contact = new Contact(
+                "Joshua123",
+                "Joshua",
+                "Hernandez",
+                "1234567890",
+                "123 Random Road");
+        contact.setPhone("0987654321");
+        assertEquals("0987654321", contact.getPhone());
+    }
+
     // -------------------------------------------------------
     // Address tests
     // -------------------------------------------------------
@@ -185,5 +312,43 @@ public class ContactTest {
                         "1234567890",
                         null)
         );
+    }
+
+    @Test
+    void testSetAddressNull() {
+        Contact contact = new Contact(
+                "Joshua123",
+                "Joshua",
+                "Hernandez",
+                "1234567890",
+                "123 Random Road");
+        assertThrows(IllegalArgumentException.class, () ->
+                contact.setAddress(null)
+        );
+    }
+
+    @Test
+    void testSetAddressTooLong() {
+        Contact contact = new Contact(
+                "Joshua123",
+                "Joshua",
+                "Hernandez",
+                "1234567890",
+                "123 Random Road");
+        assertThrows(IllegalArgumentException.class, () ->
+                contact.setAddress("123 Random Road 123 Random Road 123 Random Road")
+        );
+    }
+
+    @Test
+    void testSetAddressSuccess() {
+        Contact contact = new Contact(
+                "Joshua123",
+                "Joshua",
+                "Hernandez",
+                "1234567890",
+                "123 Random Road");
+        contact.setAddress("456 Other Road");
+        assertEquals("456 Other Road", contact.getAddress());
     }
 }
