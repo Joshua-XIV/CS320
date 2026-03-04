@@ -2,6 +2,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 public class ContactTest {
+
+    // -------------------------------------------------------
+    // Valid contact tests
+    // -------------------------------------------------------
+
     @Test
     void testContact() {
         Contact contact = new Contact(
@@ -17,6 +22,10 @@ public class ContactTest {
         assertEquals("1234567890", contact.getPhone());
         assertEquals("123 Random Road", contact.getAddress());
     }
+
+    // -------------------------------------------------------
+    // Contact ID tests
+    // -------------------------------------------------------
 
     @Test
     void testContactLongContactID() {
@@ -42,6 +51,10 @@ public class ContactTest {
         );
     }
 
+    // -------------------------------------------------------
+    // First name tests
+    // -------------------------------------------------------
+
     @Test
     void testContactLongFirstName() {
         assertThrows(IllegalArgumentException.class, () ->
@@ -66,6 +79,10 @@ public class ContactTest {
         );
     }
 
+    // -------------------------------------------------------
+    // Last name tests
+    // -------------------------------------------------------
+
     @Test
     void testContactLongLastName() {
         assertThrows(IllegalArgumentException.class, () ->
@@ -89,6 +106,10 @@ public class ContactTest {
                         "123 Random Road")
         );
     }
+
+    // -------------------------------------------------------
+    // Phone number tests
+    // -------------------------------------------------------
 
     @Test
     void testContactLongPhoneNumber() {
@@ -137,6 +158,10 @@ public class ContactTest {
                         "123 Random Road")
         );
     }
+
+    // -------------------------------------------------------
+    // Address tests
+    // -------------------------------------------------------
 
     @Test
     void testContactLongAddress() {
