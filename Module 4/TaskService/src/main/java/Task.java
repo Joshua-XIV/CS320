@@ -45,7 +45,7 @@ public class Task {
     }
 
     // Getters for class attributes
-    public String getTaskID() {return  taskID;}
+    public String getTaskID() {return taskID;}
     public String getName() {return name;}
     public String getDescription() {return description;}
 
