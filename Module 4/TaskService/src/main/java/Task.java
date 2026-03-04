@@ -14,7 +14,7 @@ public class Task {
      * @param description  the description of the task (max 50 characters, not null)
      * @throws IllegalArgumentException if any parameter is invalid
      */
-    Task(String taskID, String name, String description) {
+    public Task(String taskID, String name, String description) {
         if (taskID == null) {
             throw  new IllegalArgumentException(("Task ID must not be null"));
         }
@@ -45,12 +45,12 @@ public class Task {
     }
 
     // Getters for class attributes
-    String getTaskID() {return  taskID;}
-    String getName() {return name;}
-    String getDescription() {return description;}
+    public String getTaskID() {return  taskID;}
+    public String getName() {return name;}
+    public String getDescription() {return description;}
 
     // Setters for class attributes except taskID
-    void setName(String name) {
+    public void setName(String name) {
         if (name == null) {
             throw new IllegalArgumentException("Name must not be null");
         }
@@ -62,7 +62,7 @@ public class Task {
         this.name = name;
     }
 
-    void setDescription(String description) {
+    public void setDescription(String description) {
         if (description == null) {
             throw new IllegalArgumentException("Description must not be null");
         }
