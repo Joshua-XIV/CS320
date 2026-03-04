@@ -23,22 +23,22 @@ public class ContactService {
     }
 
     public void updateFirstName(String contactID, String firstName) {
-        getContactById(contactID).setFirstName(firstName);
+        getContactByID(contactID).setFirstName(firstName);
     }
 
     public void updateLastName(String contactID, String lastName) {
-        getContactById(contactID).setLastName(lastName);
+        getContactByID(contactID).setLastName(lastName);
     }
 
     public void updatePhone(String contactID, String phone) {
-        getContactById(contactID).setPhone(phone);
+        getContactByID(contactID).setPhone(phone);
     }
 
     public void updateAddress(String contactID, String address) {
-        getContactById(contactID).setAddress(address);
+        getContactByID(contactID).setAddress(address);
     }
 
-    public Contact getContactById(String contactID) {
+    public Contact getContactByID(String contactID) {
         if (!contacts.containsKey(contactID)) {
             throw new IllegalArgumentException("There is no contact by that given ID");
         }
