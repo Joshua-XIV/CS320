@@ -16,7 +16,7 @@ public class Task {
      */
     public Task(String taskID, String name, String description) {
         if (taskID == null) {
-            throw  new IllegalArgumentException(("Task ID must not be null"));
+            throw new IllegalArgumentException(("Task ID must not be null"));
         }
 
         if (taskID.length() > 10) {
@@ -36,7 +36,7 @@ public class Task {
         }
 
         if (description.length() > 50) {
-            throw  new IllegalArgumentException("Description must not be longer than 50 characters");
+            throw new IllegalArgumentException("Description must not be longer than 50 characters");
         }
 
         this.taskID = taskID;
@@ -56,7 +56,7 @@ public class Task {
         }
 
         if (name.length() > 20) {
-            throw  new IllegalArgumentException("Name must not be longer than 20 characters");
+            throw new IllegalArgumentException("Name must not be longer than 20 characters");
         }
 
         this.name = name;
@@ -68,7 +68,7 @@ public class Task {
         }
 
         if (description.length() > 50) {
-            throw  new IllegalArgumentException("Description must not be longer than 50 characters");
+            throw new IllegalArgumentException("Description must not be longer than 50 characters");
         }
 
         this.description = description;
