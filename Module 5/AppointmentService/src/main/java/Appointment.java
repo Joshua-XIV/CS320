@@ -53,7 +53,7 @@ public class Appointment {
             throw new IllegalArgumentException("The appointment date can not be null");
         }
 
-        if (appointmentDate.before(this.appointmentDate)) {
+        if (appointmentDate.before(new Date())) {
             throw new IllegalArgumentException("The appointment date can not be in the past");
         }
 
