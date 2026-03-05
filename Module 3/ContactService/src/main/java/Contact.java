@@ -4,6 +4,12 @@ public class Contact {
     private String lastName;
     private String phone;
     private String address;
+    private final int CONTACT_ID_LIMIT = 10;
+    private final int FIRST_NAME_LIMIT = 10;
+    private final int LAST_NAME_LIMIT = 10;
+    private final int PHONE_NUMBER_LENGTH = 10;
+    private final int ADDRESS_LIMIT = 30;
+
 
     /**
      * Constructs a new Contact with the specified ID, name, phone, and address.
@@ -21,28 +27,28 @@ public class Contact {
         if (contactID == null) {
             throw new IllegalArgumentException("Contact ID must not be null");
         }
-        if (contactID.length() > 10) {
+        if (contactID.length() > CONTACT_ID_LIMIT) {
             throw new IllegalArgumentException("Contact ID must be at most 10 characters");
         }
 
         if (firstName == null) {
             throw new IllegalArgumentException("First name must not be null");
         }
-        if (firstName.length() > 10) {
+        if (firstName.length() > FIRST_NAME_LIMIT) {
             throw new IllegalArgumentException("First name must be at most 10 characters");
         }
 
         if (lastName == null) {
             throw new IllegalArgumentException("Last name must not be null");
         }
-        if (lastName.length() > 10) {
+        if (lastName.length() > LAST_NAME_LIMIT) {
             throw new IllegalArgumentException("Last name must be at most 10 characters");
         }
 
         if (phone == null) {
             throw new IllegalArgumentException("Phone must not be null");
         }
-        if (phone.length() != 10) {
+        if (phone.length() != PHONE_NUMBER_LENGTH) {
             throw new IllegalArgumentException("Phone must be exactly 10 digits");
         }
         for (int i = 0; i < phone.length(); i++) {
@@ -54,7 +60,7 @@ public class Contact {
         if (address == null) {
             throw new IllegalArgumentException("Address must not be null");
         }
-        if (address.length() > 30) {
+        if (address.length() > ADDRESS_LIMIT) {
             throw new IllegalArgumentException("Address must be at most 30 characters");
         }
 
@@ -76,7 +82,7 @@ public class Contact {
     public void setFirstName(String firstName) {
         if (firstName == null)
             throw new IllegalArgumentException("First name must not be null");
-        if (firstName.length() > 10)
+        if (firstName.length() > FIRST_NAME_LIMIT)
             throw new IllegalArgumentException("First name must be at most 10 characters");
         this.firstName = firstName;
     }
@@ -84,7 +90,7 @@ public class Contact {
     public void setLastName(String lastName) {
         if (lastName == null)
             throw new IllegalArgumentException("Last name must not be null");
-        if (lastName.length() > 10)
+        if (lastName.length() > LAST_NAME_LIMIT)
             throw new IllegalArgumentException("Last name must be at most 10 characters");
         this.lastName = lastName;
     }
@@ -92,7 +98,7 @@ public class Contact {
     public void setPhone(String phone) {
         if (phone == null)
             throw new IllegalArgumentException("Phone must not be null");
-        if (phone.length() != 10)
+        if (phone.length() != PHONE_NUMBER_LENGTH)
             throw new IllegalArgumentException("Phone must be exactly 10 digits");
         for (int i = 0; i < phone.length(); i++)
             if (!Character.isDigit(phone.charAt(i)))
@@ -103,7 +109,7 @@ public class Contact {
     public void setAddress(String address) {
         if (address == null)
             throw new IllegalArgumentException("Address must not be null");
-        if (address.length() > 30)
+        if (address.length() > ADDRESS_LIMIT)
             throw new IllegalArgumentException("Address must be at most 30 characters");
         this.address = address;
     }
