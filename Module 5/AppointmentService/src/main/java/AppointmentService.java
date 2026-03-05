@@ -10,7 +10,7 @@ public class AppointmentService {
         }
 
         if (appointments.containsKey(appointment.getAppointmentID())) {
-            throw new IllegalArgumentException("Appointment ID already exist");
+            throw new IllegalArgumentException("Appointment ID already exists");
         }
 
         appointments.put(appointment.getAppointmentID(), appointment);
