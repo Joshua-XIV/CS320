@@ -1,3 +1,4 @@
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,5 +27,21 @@ public class AppointmentService {
         }
 
         appointments.remove(appointmentID);
+    }
+
+    public void updateAppointmentDate(String appointmentID, Date appointmentDate) {
+        getAppointmentByID(appointmentID).setAppointmentDate(appointmentDate);
+    }
+
+    public void updateDescription(String appointmentID, String description) {
+        getAppointmentByID(appointmentID).setDescription(description);
+    }
+
+    public Appointment getAppointmentByID(String appointmentID) {
+        if (!appointments.containsKey(appointmentID)) {
+            throw new IllegalArgumentException("Appointment ID does not exist");
+        }
+
+        return appointments.get(appointmentID);
     }
 }
