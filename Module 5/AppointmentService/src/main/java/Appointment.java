@@ -4,6 +4,7 @@ public class Appointment {
     private final String appointmentID;
     private Date appointmentDate;
     private String description;
+    private final int APPOINTMENT_ID_LIMIT = 10;
     private final int DESCRIPTION_LIMIT = 50;
 
 
@@ -12,8 +13,8 @@ public class Appointment {
             throw new IllegalArgumentException("The appointment ID can not be null");
         }
 
-        if (appointmentID.length() > 10) {
-            throw new IllegalArgumentException("This appointment ID can not be more than 10 characters");
+        if (appointmentID.length() > APPOINTMENT_ID_LIMIT) {
+            throw new IllegalArgumentException("This appointment ID can not be more than " + APPOINTMENT_ID_LIMIT + " characters");
         }
 
         if (appointmentDate == null) {

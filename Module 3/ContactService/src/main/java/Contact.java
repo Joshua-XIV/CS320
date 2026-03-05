@@ -28,28 +28,28 @@ public class Contact {
             throw new IllegalArgumentException("Contact ID must not be null");
         }
         if (contactID.length() > CONTACT_ID_LIMIT) {
-            throw new IllegalArgumentException("Contact ID must be at most 10 characters");
+            throw new IllegalArgumentException("Contact ID must be at most " + CONTACT_ID_LIMIT + " characters");
         }
 
         if (firstName == null) {
             throw new IllegalArgumentException("First name must not be null");
         }
         if (firstName.length() > FIRST_NAME_LIMIT) {
-            throw new IllegalArgumentException("First name must be at most 10 characters");
+            throw new IllegalArgumentException("First name must be at most " + FIRST_NAME_LIMIT + " characters");
         }
 
         if (lastName == null) {
             throw new IllegalArgumentException("Last name must not be null");
         }
         if (lastName.length() > LAST_NAME_LIMIT) {
-            throw new IllegalArgumentException("Last name must be at most 10 characters");
+            throw new IllegalArgumentException("Last name must be at most " + LAST_NAME_LIMIT + " characters");
         }
 
         if (phone == null) {
             throw new IllegalArgumentException("Phone must not be null");
         }
         if (phone.length() != PHONE_NUMBER_LENGTH) {
-            throw new IllegalArgumentException("Phone must be exactly 10 digits");
+            throw new IllegalArgumentException("Phone must be exactly " + PHONE_NUMBER_LENGTH + " digits");
         }
         for (int i = 0; i < phone.length(); i++) {
             if (!Character.isDigit(phone.charAt(i))) {
@@ -61,7 +61,7 @@ public class Contact {
             throw new IllegalArgumentException("Address must not be null");
         }
         if (address.length() > ADDRESS_LIMIT) {
-            throw new IllegalArgumentException("Address must be at most 30 characters");
+            throw new IllegalArgumentException("Address must be at most " + ADDRESS_LIMIT + " characters");
         }
 
         this.contactID = contactID;
@@ -83,7 +83,7 @@ public class Contact {
         if (firstName == null)
             throw new IllegalArgumentException("First name must not be null");
         if (firstName.length() > FIRST_NAME_LIMIT)
-            throw new IllegalArgumentException("First name must be at most 10 characters");
+            throw new IllegalArgumentException("First name must be at most " + FIRST_NAME_LIMIT  + " characters");
         this.firstName = firstName;
     }
 
@@ -91,7 +91,7 @@ public class Contact {
         if (lastName == null)
             throw new IllegalArgumentException("Last name must not be null");
         if (lastName.length() > LAST_NAME_LIMIT)
-            throw new IllegalArgumentException("Last name must be at most 10 characters");
+            throw new IllegalArgumentException("Last name must be at most " + LAST_NAME_LIMIT + " characters");
         this.lastName = lastName;
     }
 
@@ -99,7 +99,7 @@ public class Contact {
         if (phone == null)
             throw new IllegalArgumentException("Phone must not be null");
         if (phone.length() != PHONE_NUMBER_LENGTH)
-            throw new IllegalArgumentException("Phone must be exactly 10 digits");
+            throw new IllegalArgumentException("Phone must be exactly " + PHONE_NUMBER_LENGTH + " digits");
         for (int i = 0; i < phone.length(); i++)
             if (!Character.isDigit(phone.charAt(i)))
                 throw new IllegalArgumentException("Phone must contain only digits");
@@ -110,7 +110,7 @@ public class Contact {
         if (address == null)
             throw new IllegalArgumentException("Address must not be null");
         if (address.length() > ADDRESS_LIMIT)
-            throw new IllegalArgumentException("Address must be at most 30 characters");
+            throw new IllegalArgumentException("Address must be at most " + ADDRESS_LIMIT + " characters");
         this.address = address;
     }
 }

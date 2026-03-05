@@ -23,7 +23,7 @@ public class Task {
         }
 
         if (taskID.length() > TASK_ID_LIMIT) {
-            throw new IllegalArgumentException("Task ID must not be longer than 10 characters");
+            throw new IllegalArgumentException("Task ID must not be longer than " + TASK_ID_LIMIT + " characters");
         }
 
         if (name == null) {
@@ -31,7 +31,7 @@ public class Task {
         }
 
         if (name.length() > NAME_LIMIT) {
-            throw  new IllegalArgumentException("Name must not be longer than 20 characters");
+            throw  new IllegalArgumentException("Name must not be longer than " + NAME_LIMIT + " characters");
         }
 
         if (description == null) {
@@ -39,7 +39,7 @@ public class Task {
         }
 
         if (description.length() > DESCRIPTION_LIMIT) {
-            throw new IllegalArgumentException("Description must not be longer than 50 characters");
+            throw new IllegalArgumentException("Description must not be longer than " + DESCRIPTION_LIMIT + " characters");
         }
 
         this.taskID = taskID;
@@ -59,7 +59,7 @@ public class Task {
         }
 
         if (name.length() > NAME_LIMIT) {
-            throw new IllegalArgumentException("Name must not be longer than 20 characters");
+            throw new IllegalArgumentException("Name must not be longer than " + NAME_LIMIT + " characters");
         }
 
         this.name = name;
@@ -71,7 +71,7 @@ public class Task {
         }
 
         if (description.length() > DESCRIPTION_LIMIT) {
-            throw new IllegalArgumentException("Description must not be longer than 50 characters");
+            throw new IllegalArgumentException("Description must not be longer than " + DESCRIPTION_LIMIT + " characters");
         }
 
         this.description = description;
