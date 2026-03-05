@@ -36,6 +36,10 @@ public class Appointment {
         this.description = description;
     }
 
+    public String getAppointmentID() {
+        return appointmentID;
+    }
+
     public Date getAppointmentDate() {
         return appointmentDate;
     }
