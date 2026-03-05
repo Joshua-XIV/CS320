@@ -2,6 +2,9 @@ public class Task {
     private final String taskID;
     private String name;
     private String description;
+    private final int TASK_ID_LIMIT = 10;
+    private final int NAME_LIMIT = 20;
+    private final int DESCRIPTION_LIMIT = 50;
 
 
     /**
@@ -19,7 +22,7 @@ public class Task {
             throw new IllegalArgumentException(("Task ID must not be null"));
         }
 
-        if (taskID.length() > 10) {
+        if (taskID.length() > TASK_ID_LIMIT) {
             throw new IllegalArgumentException("Task ID must not be longer than 10 characters");
         }
 
@@ -27,7 +30,7 @@ public class Task {
             throw new IllegalArgumentException("Name must not be null");
         }
 
-        if (name.length() > 20) {
+        if (name.length() > NAME_LIMIT) {
             throw  new IllegalArgumentException("Name must not be longer than 20 characters");
         }
 
@@ -35,7 +38,7 @@ public class Task {
             throw new IllegalArgumentException("Description must not be null");
         }
 
-        if (description.length() > 50) {
+        if (description.length() > DESCRIPTION_LIMIT) {
             throw new IllegalArgumentException("Description must not be longer than 50 characters");
         }
 
@@ -55,7 +58,7 @@ public class Task {
             throw new IllegalArgumentException("Name must not be null");
         }
 
-        if (name.length() > 20) {
+        if (name.length() > NAME_LIMIT) {
             throw new IllegalArgumentException("Name must not be longer than 20 characters");
         }
 
@@ -67,7 +70,7 @@ public class Task {
             throw new IllegalArgumentException("Description must not be null");
         }
 
-        if (description.length() > 50) {
+        if (description.length() > DESCRIPTION_LIMIT) {
             throw new IllegalArgumentException("Description must not be longer than 50 characters");
         }
 
