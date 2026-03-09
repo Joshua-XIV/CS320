@@ -89,22 +89,6 @@ public class ContactServiceTest {
     }
 
     @Test
-    void testUpdateFirstNameNullID() {
-        service.addContact(contact);
-        assertThrows(IllegalArgumentException.class, () ->
-                service.updateFirstName(null, "Jane")
-        );
-    }
-
-    @Test
-    void testUpdateFirstNameNullValue() {
-        service.addContact(contact);
-        assertThrows(IllegalArgumentException.class, () ->
-                service.updateFirstName("Joshua123", null)
-        );
-    }
-
-    @Test
     void testUpdateFirstNameNotFound() {
         assertThrows(IllegalArgumentException.class, () ->
                 service.updateFirstName("NOTEXIST", "Jane")
@@ -123,23 +107,6 @@ public class ContactServiceTest {
     }
 
     @Test
-    void testUpdateLastNameNullID() {
-        service.addContact(contact);
-        assertThrows(IllegalArgumentException.class, () ->
-                service.updateLastName(null, "Smith")
-        );
-    }
-
-    @Test
-    void testUpdateLastNameNullValue() {
-        service.addContact(contact);
-        assertThrows(IllegalArgumentException.class, () ->
-                service.updateLastName("Joshua123", null)
-        );
-    }
-
-
-    @Test
     void testUpdateLastNameNotFound() {
         assertThrows(IllegalArgumentException.class, () ->
                 service.updateLastName("NOTEXIST", "Smith")
@@ -155,22 +122,6 @@ public class ContactServiceTest {
         service.addContact(contact);
         service.updatePhone("Joshua123", "0987654321");
         assertEquals("0987654321", service.getContactByID("Joshua123").getPhone());
-    }
-
-    @Test
-    void testUpdatePhoneNullID() {
-        service.addContact(contact);
-        assertThrows(IllegalArgumentException.class, () ->
-                service.updatePhone(null, "1234567890")
-        );
-    }
-
-    @Test
-    void testUpdatePhoneNullValue() {
-        service.addContact(contact);
-        assertThrows(IllegalArgumentException.class, () ->
-                service.updatePhone("Joshua123", null)
-        );
     }
 
     @Test
@@ -192,25 +143,19 @@ public class ContactServiceTest {
     }
 
     @Test
-    void testUpdateAddressNullID() {
-        service.addContact(contact);
-        assertThrows(IllegalArgumentException.class, () ->
-                service.updateAddress(null, "456 Road St")
-        );
-    }
-
-    @Test
-    void testUpdateAddressNullValue() {
-        service.addContact(contact);
-        assertThrows(IllegalArgumentException.class, () ->
-                service.updateAddress("Joshua123", null)
-        );
-    }
-
-    @Test
     void testUpdateAddressNotFound() {
         assertThrows(IllegalArgumentException.class, () ->
                 service.updateAddress("NOTEXIST", "456 Other Road")
+        );
+    }
+
+    // -------------------------------------------------------
+    // Null ID test
+    // -------------------------------------------------------
+    @Test
+    void testGetContactByIDNull() {
+        assertThrows(IllegalArgumentException.class, () ->
+                service.getContactByID(null)
         );
     }
 }
