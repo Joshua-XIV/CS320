@@ -7,19 +7,23 @@ public class AppointmentService {
 
     public void addAppointment(Appointment appointment) {
         if (appointment == null) {
-            throw new IllegalArgumentException("Appointment object can not be null");
+            throw new IllegalArgumentException("Appointment object can not be null.");
         }
 
         if (appointments.containsKey(appointment.getAppointmentID())) {
-            throw new IllegalArgumentException("Appointment ID already exists");
+            throw new IllegalArgumentException("Appointment ID already exists.");
         }
 
         appointments.put(appointment.getAppointmentID(), appointment);
     }
 
     public void deleteAppointment(String appointmentID) {
+        if (appointmentID == null) {
+            throw new IllegalArgumentException("Appointment ID cannot be null.");
+        }
+
         if (!appointments.containsKey(appointmentID)) {
-            throw new IllegalArgumentException("Appointment ID does not exist");
+            throw new IllegalArgumentException("No appointment found with the given ID.");
         }
 
         appointments.remove(appointmentID);
@@ -34,8 +38,12 @@ public class AppointmentService {
     }
 
     public Appointment getAppointmentByID(String appointmentID) {
+        if (appointmentID == null) {
+            throw new IllegalArgumentException("The appointment ID can not be null");
+        }
+
         if (!appointments.containsKey(appointmentID)) {
-            throw new IllegalArgumentException("Appointment ID does not exist");
+            throw new IllegalArgumentException("There is no appointment by that given ID");
         }
 
         return appointments.get(appointmentID);

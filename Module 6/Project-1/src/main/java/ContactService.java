@@ -16,6 +16,10 @@ public class ContactService {
     }
 
     public void deleteContact(String contactID) {
+        if (contactID == null) {
+            throw new IllegalArgumentException("Contact ID must not be null.");
+        }
+
         if (!contacts.containsKey(contactID)) {
             throw new IllegalArgumentException("No contact found with the given ID.");
         }
@@ -39,6 +43,10 @@ public class ContactService {
     }
 
     public Contact getContactByID(String contactID) {
+        if (contactID == null) {
+            throw new IllegalArgumentException("Contact ID must not be null.");
+        }
+
         if (!contacts.containsKey(contactID)) {
             throw new IllegalArgumentException("There is no contact by that given ID");
         }

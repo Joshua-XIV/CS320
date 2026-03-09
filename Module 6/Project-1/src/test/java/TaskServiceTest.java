@@ -59,6 +59,13 @@ public class TaskServiceTest {
     }
 
     @Test
+    void testDeleteTaskNullID() {
+        assertThrows(IllegalArgumentException.class, () ->
+                service.deleteTask(null)
+        );
+    }
+
+    @Test
     void testDeleteTaskNotFound() {
         assertThrows(IllegalArgumentException.class, () ->
                 service.deleteTask("NOTEXIST")
@@ -66,7 +73,7 @@ public class TaskServiceTest {
     }
 
     // -------------------------------------------------------
-    // Update task tests
+    // Update task name tests
     // -------------------------------------------------------
 
     @Test
@@ -83,6 +90,10 @@ public class TaskServiceTest {
         );
     }
 
+    // -------------------------------------------------------
+    // Update task description tests
+    // -------------------------------------------------------
+
     @Test
     void testUpdateTaskDescription() {
         service.addTask(task);
@@ -95,5 +106,19 @@ public class TaskServiceTest {
         assertThrows(IllegalArgumentException.class, () ->
                 service.updateTaskDescription("NOTEXIST", "Walk the dog around the block")
         );
+    }
+
+    // -------------------------------------------------------
+    // Get tasks tests
+    // -------------------------------------------------------
+
+    @Test
+    void testGetTaskByIDNull() {
+        assertThrows(IllegalArgumentException.class, () -> service.getTaskByID(null));
+    }
+
+    @Test
+    void testGetTaskByIDNotFound() {
+        assertThrows(IllegalArgumentException.class, () -> service.getTaskByID("NOTEXIST"));
     }
 }

@@ -4,8 +4,8 @@ public class Appointment {
     private final String appointmentID;
     private Date appointmentDate;
     private String description;
-    private final int APPOINTMENT_ID_LIMIT = 10;
-    private final int DESCRIPTION_LIMIT = 50;
+    private static final int APPOINTMENT_ID_LIMIT = 10;
+    private static final int DESCRIPTION_LIMIT = 50;
 
 
     public Appointment(String appointmentID, Date appointmentDate, String description) {

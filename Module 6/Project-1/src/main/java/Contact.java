@@ -4,11 +4,11 @@ public class Contact {
     private String lastName;
     private String phone;
     private String address;
-    private final int CONTACT_ID_LIMIT = 10;
-    private final int FIRST_NAME_LIMIT = 10;
-    private final int LAST_NAME_LIMIT = 10;
-    private final int PHONE_NUMBER_LENGTH = 10;
-    private final int ADDRESS_LIMIT = 30;
+    private static final int CONTACT_ID_LIMIT = 10;
+    private static final int FIRST_NAME_LIMIT = 10;
+    private static final int LAST_NAME_LIMIT = 10;
+    private static final int PHONE_NUMBER_LENGTH = 10;
+    private static final int ADDRESS_LIMIT = 30;
 
 
     /**
