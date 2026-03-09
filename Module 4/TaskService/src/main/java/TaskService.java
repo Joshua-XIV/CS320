@@ -17,6 +17,10 @@ public class TaskService {
     }
 
     public void deleteTask(String taskID) {
+        if (taskID == null) {
+            throw new IllegalArgumentException("Task ID must not be null");
+        }
+
         if (!tasks.containsKey(taskID)) {
             throw new IllegalArgumentException("Task ID does not exist");
         }
@@ -33,6 +37,10 @@ public class TaskService {
     }
 
     public Task getTaskByID(String taskID) {
+        if (taskID == null) {
+            throw new IllegalArgumentException("Task ID must not be null");
+        }
+
         if (!tasks.containsKey(taskID)) {
             throw new IllegalArgumentException("Task ID does not exist");
         }
