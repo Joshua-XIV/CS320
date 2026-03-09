@@ -2,9 +2,9 @@ public class Task {
     private final String taskID;
     private String name;
     private String description;
-    private final int TASK_ID_LIMIT = 10;
-    private final int NAME_LIMIT = 20;
-    private final int DESCRIPTION_LIMIT = 50;
+    private static final int TASK_ID_LIMIT = 10;
+    private static final int NAME_LIMIT = 20;
+    private static final int DESCRIPTION_LIMIT = 50;
 
 
     /**
