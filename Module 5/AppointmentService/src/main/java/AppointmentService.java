@@ -18,6 +18,10 @@ public class AppointmentService {
     }
 
     public void deleteAppointment(String appointmentID) {
+        if (appointmentID == null) {
+            throw new IllegalArgumentException("Appointment ID cannot be null");
+        }
+
         if (!appointments.containsKey(appointmentID)) {
             throw new IllegalArgumentException("Appointment ID does not exist");
         }
