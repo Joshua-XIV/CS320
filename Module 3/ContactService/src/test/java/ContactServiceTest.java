@@ -97,6 +97,14 @@ public class ContactServiceTest {
     }
 
     @Test
+    void testUpdateFirstNameNullValue() {
+        service.addContact(contact);
+        assertThrows(IllegalArgumentException.class, () ->
+                service.updateFirstName("Joshua123", null)
+        );
+    }
+
+    @Test
     void testUpdateFirstNameNotFound() {
         assertThrows(IllegalArgumentException.class, () ->
                 service.updateFirstName("NOTEXIST", "Jane")
@@ -121,6 +129,15 @@ public class ContactServiceTest {
                 service.updateLastName(null, "Smith")
         );
     }
+
+    @Test
+    void testUpdateLastNameNullValue() {
+        service.addContact(contact);
+        assertThrows(IllegalArgumentException.class, () ->
+                service.updateLastName("Joshua123", null)
+        );
+    }
+
 
     @Test
     void testUpdateLastNameNotFound() {
@@ -149,6 +166,14 @@ public class ContactServiceTest {
     }
 
     @Test
+    void testUpdatePhoneNullValue() {
+        service.addContact(contact);
+        assertThrows(IllegalArgumentException.class, () ->
+                service.updatePhone("Joshua123", null)
+        );
+    }
+
+    @Test
     void testUpdatePhoneNotFound() {
         assertThrows(IllegalArgumentException.class, () ->
                 service.updatePhone("NOTEXIST", "0987654321")
@@ -171,6 +196,14 @@ public class ContactServiceTest {
         service.addContact(contact);
         assertThrows(IllegalArgumentException.class, () ->
                 service.updateAddress(null, "456 Road St")
+        );
+    }
+
+    @Test
+    void testUpdateAddressNullValue() {
+        service.addContact(contact);
+        assertThrows(IllegalArgumentException.class, () ->
+                service.updateAddress("Joshua123", null)
         );
     }
 
