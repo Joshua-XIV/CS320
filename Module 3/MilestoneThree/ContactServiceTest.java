@@ -63,6 +63,14 @@ public class ContactServiceTest {
     }
 
     @Test
+    void testDeleteContactNullID() {
+        service.addContact(contact);
+        assertThrows(IllegalArgumentException.class, () ->
+                service.deleteContact(null)
+        );
+    }
+
+    @Test
     void testDeleteContactNotFound() {
         assertThrows(IllegalArgumentException.class, () ->
                 service.deleteContact("NOTEXIST")
@@ -70,7 +78,7 @@ public class ContactServiceTest {
     }
 
     // -------------------------------------------------------
-    // Update contact tests
+    // First name contact tests
     // -------------------------------------------------------
 
     @Test
@@ -87,6 +95,10 @@ public class ContactServiceTest {
         );
     }
 
+    // -------------------------------------------------------
+    // Last name contact tests
+    // -------------------------------------------------------
+
     @Test
     void testUpdateLastName() {
         service.addContact(contact);
@@ -100,6 +112,10 @@ public class ContactServiceTest {
                 service.updateLastName("NOTEXIST", "Smith")
         );
     }
+
+    // -------------------------------------------------------
+    // Phone number contact tests
+    // -------------------------------------------------------
 
     @Test
     void testUpdatePhone() {
@@ -115,6 +131,10 @@ public class ContactServiceTest {
         );
     }
 
+    // -------------------------------------------------------
+    // Address contact tests
+    // -------------------------------------------------------
+
     @Test
     void testUpdateAddress() {
         service.addContact(contact);
@@ -126,6 +146,23 @@ public class ContactServiceTest {
     void testUpdateAddressNotFound() {
         assertThrows(IllegalArgumentException.class, () ->
                 service.updateAddress("NOTEXIST", "456 Other Road")
+        );
+    }
+
+    // -------------------------------------------------------
+    // Get contact tests
+    // -------------------------------------------------------
+    @Test
+    void testGetContactByIDNull() {
+        assertThrows(IllegalArgumentException.class, () ->
+                service.getContactByID(null)
+        );
+    }
+
+    @Test
+    void testGetContactByIDNotFound() {
+        assertThrows(IllegalArgumentException.class, () ->
+                service.getContactByID("NON_EXISTENT_ID")
         );
     }
 }
