@@ -22,7 +22,7 @@ public class TaskService {
         }
 
         if (!tasks.containsKey(taskID)) {
-            throw new IllegalArgumentException("Task ID does not exist.");
+            throw new IllegalArgumentException("No task found with the given ID.");
         }
 
         tasks.remove(taskID);
