@@ -150,12 +150,19 @@ public class ContactServiceTest {
     }
 
     // -------------------------------------------------------
-    // Null ID test
+    // Get contact tests
     // -------------------------------------------------------
     @Test
     void testGetContactByIDNull() {
         assertThrows(IllegalArgumentException.class, () ->
                 service.getContactByID(null)
+        );
+    }
+
+    @Test
+    void testGetContactByIDNotFound() {
+        assertThrows(IllegalArgumentException.class, () ->
+                service.getContactByID("NON_EXISTENT_ID")
         );
     }
 }
