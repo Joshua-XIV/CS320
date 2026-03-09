@@ -76,7 +76,7 @@ public class AppointmentServiceTest {
     }
 
     // -------------------------------------------------------
-    // Update appointment tests
+    // Update appointment date tests
     // -------------------------------------------------------
 
     @Test
@@ -95,6 +95,10 @@ public class AppointmentServiceTest {
         );
     }
 
+    // -------------------------------------------------------
+    // Update appointment description tests
+    // -------------------------------------------------------
+
     @Test
     void testUpdateDescription() {
         service.addAppointment(appointment);
@@ -106,6 +110,24 @@ public class AppointmentServiceTest {
     void testUpdateDescriptionNotFound() {
         assertThrows(IllegalArgumentException.class, () ->
                 service.updateDescription("NOTEXIST", "Dentist appointment")
+        );
+    }
+
+    // -------------------------------------------------------
+    //  Get appointment ID tests
+    // -------------------------------------------------------
+
+    @Test
+    void testGetAppointmentByIDNull() {
+        assertThrows(IllegalArgumentException.class, () ->
+                service.getAppointmentByID(null)
+        );
+    }
+
+    @Test
+    void testGetAppointmentByIDNotFound() {
+        assertThrows(IllegalArgumentException.class, () ->
+                service.getAppointmentByID("NOTEXIST")
         );
     }
 }
