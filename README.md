@@ -1,0 +1,13 @@
+# CS 320 Software Testing, Automation, and Quality Assurance
+## Portfolio Submission
+This repository contains selected work from CS 320, demonstrating skills in software testing, automation, and quality assurance. The submitted files include the contact service implementation and unit tests from Project One in the module six folder, and the summary and reflections report from Project Two in the module seven folder.
+
+## Reflection
+How can I ensure that my code, program, or software is functional and secure?
+Ensuring functionality starts with writing thorough unit tests that cover every requirement, not just the happy path. In Project One, every field constraint was tested for null inputs, boundary violations, and valid inputs, and every service operation was tested for success, failure, and edge cases. Achieving 100% code coverage across all six source files confirmed that no logic was left untested. On the security side, the contact, task, and appointment services enforce strict input validation at both the constructor and setter level, rejecting null values, malformed inputs, and out-of-range data before they can be stored. Declaring ID fields as final and using private access modifiers with controlled setters further ensures that data cannot be modified in unexpected ways.
+
+## How do I interpret user needs and incorporate them into a program?
+User needs are expressed through requirements, and the most important step is treating every requirement as a concrete obligation rather than a general guideline. In Project One, each field constraint stated in the requirements became a specific test case. For example, the requirement that a phone number must be exactly ten digits and contain only numeric characters was translated directly into three separate tests covering too short, too long, and non-digit inputs. This approach ensures that what the user needs is verifiably present in the code, rather than assumed to be working correctly.
+
+## How do I approach designing software?
+Good software design starts with clear boundaries between responsibilities. In Project One, each feature was split into an object class that handled data validation and a service class that handled storage and operations. This separation meant that validation logic lived in one place and could be tested independently of service behavior. Using a HashMap for storage kept retrieval and deletion at constant time complexity, which was a deliberate design choice to keep the services efficient. Going forward, the approach is to design with testability in mind from the start, because code that is hard to test is usually a sign that responsibilities are not clearly separated.
